@@ -1,31 +1,38 @@
 #include <stdio.h>
 
-int intPrime();
+int soNguyenTo();
 
 int main(){
-	int prime;
+	int n;
 	for(int i=0;i<2;i++){
-		printf("vui long nhap so nguyen: ");
-		scanf("%d",&prime);
-		if(intPrime(prime)){
-			printf("do la so nguyen to\n");
-		}else{
-			printf("do khong phai la so nguyen to\n");
-		}
-	}
+	printf("hay nhap mot so nguyen to ");
+	scanf("%d",&n);
+	if (soNguyenTo(n)){
+	printf("la so nguyen to \n");
+}else{
+
+	printf("khong phai la so nguyen \n");
+}
+
+}
 	return 0;
 }
 
-int intPrime(int num){
-	int i=2;
-	if(num<2){
-		return 0;
-	}
-	while(i<num){
-		if(num%i==0){
-			return 0;
-		}
-		i++;
-	}
-	return 1;
+int soNguyenTo(int prime){
+
+int i=2 ,TF=1;
+if (prime < i){
+	TF=0;
+	return TF;	
 }
+while(i<prime){
+	if(prime%i==0){
+		TF=0;
+		return TF;
+	}
+	i++;
+}
+return TF;
+}
+
+
